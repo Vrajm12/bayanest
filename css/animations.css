@@ -1,0 +1,180 @@
+/* ============================================
+   BayaNest Realty — Animations
+   ============================================ */
+
+/* ── Scroll Reveal Base ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide from left */
+[data-reveal="left"] {
+  transform: translateX(-40px);
+}
+
+[data-reveal="left"].revealed {
+  transform: translateX(0);
+}
+
+/* Slide from right */
+[data-reveal="right"] {
+  transform: translateX(40px);
+}
+
+[data-reveal="right"].revealed {
+  transform: translateX(0);
+}
+
+/* Scale up */
+[data-reveal="scale"] {
+  transform: scale(0.92);
+}
+
+[data-reveal="scale"].revealed {
+  transform: scale(1);
+}
+
+/* Stagger children */
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+
+[data-reveal-stagger].revealed > *:nth-child(1) { transition-delay: 0ms; }
+[data-reveal-stagger].revealed > *:nth-child(2) { transition-delay: 80ms; }
+[data-reveal-stagger].revealed > *:nth-child(3) { transition-delay: 160ms; }
+[data-reveal-stagger].revealed > *:nth-child(4) { transition-delay: 240ms; }
+[data-reveal-stagger].revealed > *:nth-child(5) { transition-delay: 320ms; }
+[data-reveal-stagger].revealed > *:nth-child(6) { transition-delay: 400ms; }
+[data-reveal-stagger].revealed > *:nth-child(7) { transition-delay: 480ms; }
+[data-reveal-stagger].revealed > *:nth-child(8) { transition-delay: 560ms; }
+[data-reveal-stagger].revealed > *:nth-child(9) { transition-delay: 640ms; }
+
+[data-reveal-stagger].revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero Entrance ── */
+.hero__text {
+  opacity: 0;
+  animation: heroTextIn 1s var(--ease-out) 0.3s forwards;
+}
+
+.hero__visual {
+  opacity: 0;
+  animation: heroVisualIn 1.2s var(--ease-out) 0.6s forwards;
+}
+
+@keyframes heroTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroVisualIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* ── Gold line draw ── */
+@keyframes goldLineDraw {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+.divider {
+  width: 0;
+}
+
+.divider.revealed {
+  animation: goldLineDraw 0.6s var(--ease-out) forwards;
+}
+
+/* ── Counter animation ── */
+.stat__number {
+  transition: all 0.5s var(--ease-out);
+}
+
+/* ── Gentle float ── */
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero__image-accent {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+/* ── Pulse ring ── */
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(201, 168, 76, 0);
+  }
+}
+
+.rera__badge {
+  animation: pulseRing 2s infinite;
+}
+
+/* ── Section background transitions ── */
+.section--dark {
+  position: relative;
+}
+
+.section--dark:not(.rera)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+  opacity: 0.3;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-reveal-stagger] > * {
+    opacity: 1;
+    transform: none;
+  }
+}

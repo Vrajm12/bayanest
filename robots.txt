@@ -1,0 +1,20 @@
+# BayaNest Realty & Marketing — robots.txt
+# https://www.bayanestrealty.com
+
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+
+# Sitemap
+Sitemap: https://www.bayanestrealty.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
