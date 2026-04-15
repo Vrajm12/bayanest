@@ -32,7 +32,7 @@ const Header = () => {
               </div>
             </Link>
 
-            <div className={`nav__links ${isMobileMenuOpen ? 'show' : ''}`} id="navLinks">
+            <div className={`nav__links ${isMobileMenuOpen ? 'open' : ''}`} id="navLinks">
               <NavLink to="/" className={({ isActive }) => `nav__link ${isActive ? 'active' : ''}`}>Home</NavLink>
               <NavLink to="/about" className={({ isActive }) => `nav__link ${isActive ? 'active' : ''}`}>About Us</NavLink>
               <NavLink to="/services" className={({ isActive }) => `nav__link ${isActive ? 'active' : ''}`}>Services</NavLink>
@@ -43,7 +43,7 @@ const Header = () => {
             </div>
 
             <button 
-              className={`nav__toggle ${isMobileMenuOpen ? 'active' : ''}`} 
+              className={`nav__toggle ${isMobileMenuOpen ? 'open' : ''}`} 
               id="navToggle" 
               aria-label="Toggle navigation"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

@@ -214,6 +214,15 @@
 }
 
 @media (max-width: 768px) {
+  .projects-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+  }
+
+  .projects-hero__content {
+    margin: 0 auto;
+  }
+
   .project-detail-card {
     grid-template-columns: 1fr;
   }
@@ -222,9 +231,19 @@
     min-height: 200px;
   }
 
+  .project-detail-card__body {
+    padding: var(--space-24);
+  }
+
   .projects-filters__tabs {
     flex-wrap: wrap;
     justify-content: center;
+    gap: var(--space-8);
+  }
+
+  .projects-filter-btn {
+    padding: var(--space-8) var(--space-16);
+    font-size: var(--fs-xs);
   }
 
   .projects-cta__inner {
