@@ -25,7 +25,7 @@ const Header = () => {
         <div className="container">
           <div className="nav__inner">
             <Link to="/" className="nav__logo">
-              <img src="/src/assets/images/logo.png" alt="BayaNest Realty Logo" />
+              <img src="/src/assets/images/Logo.png" alt="BayaNest Realty Logo" />
               <div className="nav__logo-text">
                 BayaNest
                 <span>Realty & Marketing</span>
