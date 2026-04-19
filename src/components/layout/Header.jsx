@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import logoImage from '../../assets/images/Logo.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +26,7 @@ const Header = () => {
         <div className="container">
           <div className="nav__inner">
             <Link to="/" className="nav__logo">
-              <img src="/src/assets/images/Logo.png" alt="BayaNest Realty Logo" />
+              <img src={logoImage} alt="BayaNest Realty Logo" />
               <div className="nav__logo-text">
                 BayaNest
                 <span>Realty & Marketing</span>
