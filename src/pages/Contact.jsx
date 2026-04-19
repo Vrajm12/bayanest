@@ -22,10 +22,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const form = e.target;
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
+      body: encode({
+        'form-name': 'contact',
+        'bot-field': form.elements['bot-field']?.value || '',
+        ...formData,
+      }),
     })
       .then(() => setSubmitted(true))
       .catch((error) => console.error(error));
@@ -53,13 +59,13 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href="mailto:hello@bayanestrealty.com" className="contact__method">
+                <a href="mailto:bayanestrealty@gmail.com" className="contact__method">
                   <div className="contact__method-icon">
                     <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                   </div>
                   <div>
                     <div className="contact__method-text">Email Us</div>
-                    <div className="contact__method-value">hello@bayanestrealty.com</div>
+                    <div className="contact__method-value">bayanestrealty@gmail.com</div>
                   </div>
                 </a>
 
@@ -107,10 +113,14 @@ const Contact = () => {
                       className="contact__form" 
                       style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-16)', marginTop: 'var(--space-32)' }}
                       onSubmit={handleSubmit}
+                      method="POST"
+                      action="/"
                       name="contact"
                       data-netlify="true"
+                      netlify-honeypot="bot-field"
                     >
                       <input type="hidden" name="form-name" value="contact" />
+                      <input type="hidden" name="bot-field" />
                       <input 
                         required
                         type="text" 
