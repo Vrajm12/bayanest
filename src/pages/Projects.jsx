@@ -203,7 +203,7 @@ const Projects = () => {
               <h2 style={{ color: 'var(--color-text-inverse)' }}>Don't See What You're Looking For?</h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 'var(--fs-body-lg)', marginTop: 'var(--space-12)' }}>We have access to exclusive off-market opportunities. Let's find the perfect match for you.</p>
             </div>
-            <a href="tel:+919876543210" className="btn btn--gold">
+            <a href="tel:+918530250666" className="btn btn--gold">
               Inquire Now
               <svg className="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>

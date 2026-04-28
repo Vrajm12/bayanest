@@ -1,5 +1,6 @@
 import useReveal from '../js/useReveal';
 import { Link } from 'react-router-dom';
+import founderImage from '../assets/images/image.png';
 
 const About = () => {
   useReveal();
@@ -110,16 +111,11 @@ const About = () => {
           <div className="split split--40-60">
             <div className="founder__visual" data-reveal="left">
               <div className="founder__image-frame">
-                <div className="founder__image-placeholder">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.4)" strokeWidth="0.8">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
+                <img src={founderImage} alt="Mr. Abhishek Raut" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 <div className="founder__image-accent-line"></div>
               </div>
               <div className="founder__name-card">
-                <h3>Abhishek Raut</h3>
+                <h3>Mr. Abhishek Raut</h3>
                 <span>Founder – BayaNest Realty & Marketing</span>
               </div>
             </div>
