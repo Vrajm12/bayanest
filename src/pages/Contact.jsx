@@ -148,6 +148,9 @@ const Contact = () => {
                         onChange={handleChange}
                         style={{ padding: '12px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(0,0,0,0.1)', color: 'inherit' }}
                       ></textarea>
+                      <p style={{ fontSize: 'var(--fs-xs)', color: 'rgba(255,255,255,0.7)', lineHeight: '1.5', margin: 'var(--space-4) 0' }}>
+                        By submitting this form, you acknowledge that your personal data will be processed for the purpose of responding to your enquiry as described in our <a href="/privacy-policy.html" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>Privacy Policy</a>.
+                      </p>
                       <button type="submit" className="btn btn--gold">
                         Send Message
                       </button>
